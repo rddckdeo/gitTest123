@@ -1,0 +1,149 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header, footer {
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+.logo {
+    font-weight: bold;
+}
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+.breadcrumb {
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+.container {
+    max-width: 800px; 
+    margin: 0 auto;   
+    padding: 20px;
+    flex: 1;       
+    min-height: 100%; 
+}
+.data-top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 2px;
+    width: 98%;
+    justify-content: space-between;
+}
+.data-top .total{
+    font-size : 12px;
+    margin-left: 15px;
+    padding-top : 15px;
+}
+.data-top .right {
+    text-align: right;
+}
+.data-top select, .data-top input[type="text"], .data-top input[type="password"], .data-top [class*="btn-type"] {
+    vertical-align: top;
+}
+select {
+    height: 40px;
+    font-size: 14px;
+    padding-left: 10px;
+    min-width: 70px;
+    line-height: 32px;
+    box-shadow: none;
+    border-radius: 3px;
+    border: 1px solid #acacac;
+    min-width: 150px;
+}
+input[type="text"], input[type="password"], input[type="email"], input[type="tel"], input[type="number"] {
+    height: 38px;
+    font-size: 14px;
+    padding: 0px 20px;
+    line-height: 32px;
+    border: 1px solid #acacac;
+    outline: none;
+    min-width: 200px;
+}
+.data-top .btn-search {
+    margin-left: -5px;
+    border-radius: 0 2px 2px 0;
+    border: 1px solid #6c6c6c;
+}
+.btn-search {
+    display: inline-block;
+    height: 40px;
+    padding: 0 10px;
+    font-size: 16px;
+    color: #000000;  /* 기본 텍스트 색상 */
+    text-align: center;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.btn-type1.type1 {
+    border: 1px solid #6c6c6c;
+    background: #ffffff;
+    color: #000000;
+}
+.btn-type1.type1:hover {
+    background-color: rgb(0, 114, 188);
+    color: #ffffff;  
+    border-color: #999;  
+}
+
+.table-container {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+th {
+    background-color: #f9f9f9;
+    border: 1px solid #000000;
+    border-left: none;
+    border-right: none;
+    
+}
+td{
+    border-left: none;
+    border-right: none;
+}
+tr{
+    cursor: pointer;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.pagination button {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    cursor: pointer;
+}
+footer {
+    padding: 20px;
+    text-align: center;
+}
+.footer-logo {
+    margin-bottom: 10px;
+    font-weight: bold;
+}

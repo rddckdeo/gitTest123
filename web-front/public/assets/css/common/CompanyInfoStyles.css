@@ -1,0 +1,262 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header, footer {
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+.logo {
+    font-weight: bold;
+}
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    width: 65%;
+    margin: 0 auto;
+}
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+.philosophy{
+    border : 0.1px solid rgb(210, 232, 240);
+    border-radius: 25px;
+    margin-top: 40px;
+    background-color: rgb(210, 232, 240);
+    height: 400px;
+}
+.infoTi{
+    display: block; 
+    font-size: 23px;
+    margin-bottom: 10px; 
+    font-weight: bold;
+}
+.infoCon{
+    display: block; 
+    font-size: 16px;
+    text-align: left;
+}
+.box {
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+}
+.picture {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.text-area {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;    
+}
+.service-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+}
+.service-item{
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.service-item ul {
+    padding-left: 10px;  
+    text-align: left !important;
+}
+
+/* li 요소 스타일 */
+.service-item li {
+    list-style-type: none; 
+    margin-bottom: 10px; 
+    font-size: 14px;   
+    color: #333;     
+    text-align: left;  
+    position: relative;  
+    padding-left: 10px;  
+}
+.history-wrap {
+    display: flex;
+    flex-flow: column;
+    row-gap: 20px;
+    position: relative;
+}
+.history-wrap .history .his-dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: rgb(0, 114, 188);
+    border: 8px solid #ffffffc4;
+    box-shadow: 3px 0 6px rgb(0 0 0 / 16%);
+    margin-right: 45px;
+    flex : none;
+}
+.history-wrap .history .his-info {
+    display: flex;
+    align-items: flex-start;
+}
+.history-wrap .history .his-info .his-info-year {
+    font-size: 48px;
+    font-weight: 900;
+    color: rgb(0, 114, 188);
+    line-height: 1;
+    margin-right: 35px;
+}
+.history-wrap .history .his-info .his-info-txt {
+    font-size: 20px;
+    font-weight: 300;
+    margin-top: 5px;
+}
+.history-wrap .history {
+    display: flex;
+    align-items: center;
+}
+
+ol, ul, dl{
+    margin: 0;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+dl, ul, ol, menu, li {
+    list-style: none;
+} 
+footer {
+    margin-top: 20px;
+    padding: 10px;
+}
+
+/* 오시는 길 css */ 
+
+.map-container {
+    display: flex; /* 가로로 배치 */
+    gap: 20px; /* 두 div 사이에 간격을 추가 */
+    align-items: flex-start; /* 세로 정렬을 위로 맞춤 */
+    flex-wrap: wrap; /* 화면 크기에 따라 줄 바꿈을 허용 */
+    min-width: 1100px;
+}
+
+#map {
+    width: 500px; /* 맵의 고정된 너비 */
+    height: 400px; /* 맵의 고정된 높이 */
+    flex: 0 0 auto; /* 맵은 크기가 고정되어 있으므로 flex 속성으로 크기 조정 없이 그대로 표시 */
+}
+
+/* 기본 폰트 크기 설정 */
+.ft_reset {
+    font-size: 14px;
+}
+
+/* .n_map_text의 스타일 수정 */
+.n_map_text {
+    flex: 1; /* 나머지 공간을 차지하도록 설정 */
+    overflow: hidden;
+    text-align: left;
+}
+
+
+/* .row를 flexbox로 변경하여 항목들이 가로로 정렬되게 설정 */
+.n_map_text .row {
+    display: flex; /* 가로로 배치 */
+    flex-wrap: wrap; /* 화면 크기에 따라 줄 바꿈 허용 */
+    gap: 20px; /* 항목 간 간격 */
+}
+
+
+/* col-md-6에 대해 가로로 배치되도록 너비를 설정 */
+.n_map_text .col-md-6 {
+    flex: 1 1 calc(33.33% - 20px); /* 3등분으로 배치되고 간격 추가 */
+    box-sizing: border-box;
+}
+
+/* 본사위치 밑에 주변버스가 오도록 설정 */
+.n_map_text .col-md-6:nth-child(3) {
+    flex-basis: 100%; /* 주변버스 항목을 새로운 줄로 설정 */
+}
+
+/* dl의 너비를 100%로 설정하여 각 항목이 동일한 너비를 가지도록 설정 */
+.n_map_text div dl {
+    margin-bottom: 20px;
+    width: 100%; /* dl의 너비를 100%로 설정 */
+}
+
+/* dt와 dd의 너비를 동일하게 설정 */
+.n_map_text div dl dt,
+.n_map_text div dl dd {
+    display: inline-block;
+    width: 100%; /* dt와 dd 모두 50% 너비로 설정 */
+    box-sizing: border-box; /* padding을 포함한 크기 계산 */
+    padding-left: 0px; /* 왼쪽 여백을 설정 */
+}
+
+/* dt 스타일 */
+.n_map_text div dl dt {
+    -webkit-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+    padding: 10px 10px 10px 20px;
+    margin-bottom: 10px;
+    background-color: rgb(0, 114, 188);
+    border-radius: 2px;
+    display: block;
+    font-size: 1.0em;
+    color: #fff;
+}
+
+/* dd 스타일 */
+.n_map_text div dl dd {
+    display: list-item;
+    list-style-type: disc;
+}
+
+/* 작은 화면에서 각 항목을 100%로 설정 */
+@media (max-width: 768px) {
+    .n_map_text .row .col-md-6 {
+        flex: 1 1 100%; /* 각 항목을 세로로 표시 */
+    }
+}
+
+/* .col-md-6 클래스 기본 스타일 */
+.col-md-6 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/* 창대 추가 수정 */
+.img-width-1200{
+    width: 1200px;
+}
+.section h2{
+    margin-bottom: 0;
+}
+
+.justifyCenter{
+    justify-content: center !important;
+}

@@ -1,0 +1,67 @@
+/* 팝업 오버레이 */
+.layer-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease; /* 등장 애니메이션 */
+}
+
+/* 팝업 본체 */
+.layer-popup {
+    width: 600px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    transform: scale(0.9); /* 크기가 작게 시작 */
+    transition: transform 0.3s ease; /* 크기 애니메이션 */
+}
+
+.layer-popup-header {
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+
+.close-layer-popup {
+    background: none;
+    border: none;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.layer-popup-content {
+    max-height: 700px;
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* 팝업 활성화 상태 */
+.layer-popup-overlay.show {
+    opacity: 1;
+}
+
+.layer-popup.show {
+    transform: scale(1); /* 원래 크기로 부드럽게 확대 */
+}
+
+.closeBox{
+    padding: 20px 20px 0 10px;
+    display: flex;
+    justify-content: flex-end;
+}

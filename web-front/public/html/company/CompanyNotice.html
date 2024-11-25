@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(주)에이프로솔루션</title>
+    <link rel="icon" type="image/png" href="/images/AproMark.png"> 
+    <link rel="stylesheet" href="../../assets/css/common/CompanyNoticeStyles.css">
+    <link rel="stylesheet" href="../../assets/css/common/styles.css">
+    <script src="../../assets/JS/common/common.js"></script>
+</head>
+
+<body>
+    <div id="header-container"></div>
+
+    <script>
+        // header.html을 불러와서 #header-container div에 삽입하는 코드
+        fetch('/html/common/header.html')
+            .then(response => response.text())  // 파일을 텍스트로 처리
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data; // 가져온 HTML 삽입
+
+                // LOGO div에 클릭 이벤트 추가
+                const logo = document.querySelector('.logo');
+                if (logo) {
+                    logo.addEventListener('click', function () {
+                        const url = logo.getAttribute('data-url'); // data-url 속성에서 URL 가져오기
+                        if (url) {
+                            // 절대 경로로 변환하여 페이지 이동
+                            window.location.href = new URL(url, window.location.origin); // URL을 절대 경로로 처리
+                        }
+                    });
+                }
+
+                // nav-links에 있는 각 div에 대해 클릭 이벤트 추가
+                document.querySelectorAll('.nav-links div').forEach(item => {
+                    item.addEventListener('click', function () {
+                        const url = this.getAttribute('data-url'); // data-url 속성에서 URL 가져오기
+                        if (url) {
+                            // 절대 경로로 변환하여 페이지 이동
+                            window.location.href = new URL(url, window.location.origin); // URL을 절대 경로로 처리
+                        }
+                    });
+                });
+            })
+            .catch(error => console.error('Error loading header:', error)); // 오류 처리
+    </script>
+
+    <div class="breadcrumb">
+        <p>Home &gt; Company &gt; <span style="color : rgb(0, 114, 188); font-weight: bold;">공지사항</span></p>
+    </div>
+
+    <div class="container">
+        <div class="data-top">
+            <div class="left"><span class="total">Total 1건</span></div>
+            <div class="right">
+                <select name="" id="" class="sm">
+                    <option value="">제목</option>
+                    <option value="">작성자</option>
+                </select>
+                <input type="text" class="sm">
+                <button class="btn-type1 type1 btn-search">검색</button>
+            </div>
+        </div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>작성자</th>
+                        <th>제목</th>
+                        <th>공지기간</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 테이블 행 예시 -->
+                    <tr data-url="/html/company/CompanyNoticeDetail.html">
+                        <td>1</td>
+                        <td>Author</td>
+                        <td>Sample Title</td>
+                        <td>YYYY-MM-DD</td>
+                    </tr>
+                    <!-- 필요한 경우 더 많은 행 추가 -->
+                </tbody>
+            </table>
+            <div class="pagination">
+                <button>&lt;&lt;</button>
+                <button>&lt;</button>
+                <button>1</button>
+                <button>&gt;</button>
+                <button>&gt;&gt;</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer-container"></div>
+
+    <script>
+        // header.html을 불러와서 #header-container div에 삽입하는 코드
+        fetch('/html/common/footer.html')
+            .then(response => response.text())  // 파일을 텍스트로 처리
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data; // 가져온 HTML 삽입
+            })
+            .catch(error => console.error('Error loading header:', error)); // 오류 처리
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+/* 전체 컨테이너 */
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* 메인 콘텐츠 스타일 */
+.content {
+    width: 70%;                
+    margin: 20px auto;          
+    padding: 20px;
+    background-color: #f9f9f9;
+    max-width: 1000px;
+}
+
+.notice-management {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.notice-detail-form .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-group span {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.form-group input[type="date"],
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.form-group input[type="file"] {
+    padding: 5px;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.form-buttons button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-buttons button:hover {
+    background-color: #0056b3;
+}
+
+.form-buttons button[type="button"] {
+    background-color: #6c757d;
+}
+
+.form-buttons button[type="button"]:hover {
+    background-color: #5a6268;
+}
+
+.file-border{
+    border: 1px solid #ccc;
+    padding: 10px !important;
+}
+
+.subContent{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.subInput{
+    width: 47%;
+}
+.subInput2{
+    width: 47%;
+}
+
+.form-group-date{
+    display: flex;
+    flex-direction: row;
+}
+.waveSpan{
+    display: flex;
+    align-items: center;
+    margin: 0 5px;
+}

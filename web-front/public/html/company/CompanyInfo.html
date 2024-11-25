@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(주)에이프로솔루션</title>
+    <link rel="icon" type="image/png" href="/images/AproMark.png">
+    <link rel="stylesheet" href="../../assets/css/common/CompanyInfoStyles.css">
+    <link rel="stylesheet" href="../../assets/css/common/styles.css">
+    <link href="/default/img/_bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="../../assets/JS/common/common.js"></script>
+
+</head>
+
+<body>
+    <div id="header-container"></div>
+
+
+    <script>
+
+        // header.html을 불러와서 #header-container div에 삽입하는 코드
+        fetch('/html/common/header.html')
+            .then(response => response.text())  // 파일을 텍스트로 처리
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data; // 가져온 HTML 삽입
+
+                // LOGO div에 클릭 이벤트 추가
+                const logo = document.querySelector('.logo');
+                if (logo) {
+                    logo.addEventListener('click', function () {
+                        const url = logo.getAttribute('data-url'); // data-url 속성에서 URL 가져오기
+                        if (url) {
+                            // 절대 경로로 변환하여 페이지 이동
+                            window.location.href = new URL(url, window.location.origin); // URL을 절대 경로로 처리
+                        }
+                    });
+                }
+                // nav-links에 있는 각 div에 대해 클릭 이벤트 추가
+                document.querySelectorAll('.nav-links div').forEach(item => {
+                    item.addEventListener('click', function () {
+                        const url = this.getAttribute('data-url'); // data-url 속성에서 URL 가져오기
+                        if (url) {
+                            // 절대 경로로 변환하여 페이지 이동
+                            window.location.href = new URL(url, window.location.origin); // URL을 절대 경로로 처리
+                        }
+                    });
+                });
+            })
+            .catch(error => console.error('Error loading header:', error)); // 오류 처리
+    </script>
+
+    <div class="container">
+        <div class="section img-width-1200">
+            <div class="box picture">
+                <img src="/images/company.jpg" width="58%" height="300" class="consul-img" />
+                <div class="box text-area">
+                    <span class="infoTi">
+                        "성공적인 비즈니스를 위해 전문 IT 서비스를 제공하는 IT서비스 기업"
+                    </span>
+                    <span class="infoCon">
+                        안녕하세요.<br>
+                        에이프로솔루션은 첨단 기술과 혁신적인 IT 서비스를 제공하여 고객의 비즈니스 성장을 지원하는 글로벌 기업입니다.
+                        저희는 시스템통합, 솔루션 개발 등 다양한 서비스를 통해 고객의 비즈니스 경쟁력을 강화하고, 디지털 전환을 선도하고 있습니다.
+                        에이프로솔루션은 단순히 서비스를 제공하는 기업을 넘어, 고객의 성공적인 미래를 위한 신뢰할 수 있는 파트너로 자리매김하고 있습니다.
+                        지속적인 기술 혁신과 전문성을 바탕으로, 고객이 마주하는 다양한 비즈니스 도전에 최적의 해결책을 제시하며 함께 성장할 수 있도록 최선을 다하겠습니다.
+                        앞으로도 끊임없이 변화하는 디지털 환경 속에서 고객과 함께 혁신의 미래를 열어가겠습니다.
+                        저희 에이프로솔루션과 함께하는 여정이 여러분의 비즈니스에 큰 도움이 될 것입니다. 감사합니다.
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="section philosophy img-width-1200 justifyCenter">
+            <h2>경영 이념</h2>
+            <div class="box heightImp">
+                <div class="service-grid">
+                    <div class="service-item">
+                        <div class="icon">
+                            <img src="/images/companyInfo1.png" width="40" height="40" class="consul-img" />
+                        </div>
+                        <h3>Customer-Centric Principle</h3>
+                        <p> 고객 중심, 신뢰 구축
+                        </p>
+                        <ul class="check-make">
+                            <li> 고객의 성공을 우선시하는 가치 창출</li>
+                            <li> 맞춤형 솔루션 제공 및 상호 신뢰를 기반으로 한 협력관계</li>
+                            <li> 성공이라는 신념으로 고객 중심의 서비스 제공</li>
+                        </ul>
+                    </div>
+                    <div class="service-item">
+                        <div class="icon">
+                            <img src="/images/companyInfo3.png" width="40" height="40" class="consul-img" />
+                        </div>
+                        <h3>Innovation Principle</h3>
+                        <p> 기술혁신, 지속적 발전
+                        </p>
+                        <ul class="check-make">
+                            <li> 지속적인 기술발전과 혁신을 통해 선도 </li>
+                            <li> 고객의 기대를 뛰어넘는 가치를 제공</li>
+                            <li> 혁신적 사고와 개발로 업계를 이끄는 리더</li>
+                        </ul>
+                    </div>
+                    <div class="service-item">
+                        <div class="icon">
+                            <img src="/images/companyInfo2.png" width="40" height="40" class="consul-img" />
+                        </div>
+                        <h3>Collaboration Principle</h3>
+                        <p>협력, 창의성, 공동 성장
+                        </p>
+                        <ul class="check-make">
+                            <li> 창의적이고 혁신적은 솔루션을 창출</li>
+                            <li> 긴밀한 협력을 통해 공동의 목표를 달성</li>
+                            <li> 협력과 창의성을 통한 공동의 성공</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <h2>주요 연혁</h2>
+            <div class="section-tit"></div>
+            <div class="history-wrap">
+                <div class="history">
+                    <div class="his-dot"></div>
+                    <div class="his-info">
+                        <div class="his-info-year">2023</div>
+                        <ul class="his-info-txt">
+                            <li>기업부설연구소 설립 및 인가</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="history">
+                    <div class="his-dot"></div>
+                    <div class="his-info">
+                        <div class="his-info-year">2021</div>
+                        <ul class="his-info-txt">
+                            <li>기술평가우수기업(NICE평가정보)인증 획득</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="history">
+                    <div class="his-dot"></div>
+                    <div class="his-info">
+                        <div class="his-info-year">2020</div>
+                        <ul class="his-info-txt">
+                            <li>농협정보시스템 협력업체 등록</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="history">
+                    <div class="his-dot"></div>
+                    <div class="his-info">
+                        <div class="his-info-year">2020</div>
+                        <ul class="his-info-txt">
+                            <li>(주)에이프로 솔루션 설립 </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>조직도</h2>
+            <img src="/images/Organizational1.png" width="1200" height="500" class="consul-img" />
+        </div>
+        <h2>오시는 길</h2><br>
+        <!-- <div class="section">
+                <img src="/images/map.png" width="1000" height="500" class="consul-img"/> 
+        </div> -->
+        <div class="map-container">
+            <div id="map">
+            </div>
+            <div class="n_map_text ft_reset">
+                <div class="row">
+                    <div class="col-md-6">
+                        <dl>
+                            <dt>주변버스</dt>
+                            <dd>지선 : 22, 83, 80, 33 </dd>
+                            <dd>에이스청계타워 하차</dd>
+                            <dd>인덕원푸르지오엘센트로 하차</dd>
+                            <dd>마을버스 : 05, 12 </dd>
+                            <dd>에이스청계타워 및 숲속마을 1단지 하차</dd>
+                        </dl>
+                    </div>
+                    <div class="col-md-6">
+                        <dl>
+                            <dt>주변지하철</dt>
+                            <dd>4호선 인덕원역 1번출구</dd>
+                            <dd>4호선 인덕원역 2번출구</dd>
+                        </dl>
+                    </div>
+                    <div class="col-md-6">
+                        <dl>
+                            <dt>본사위치</dt>
+                            <dd>주소 : (16006)경기도 의왕시 성고개로53, A405-2호(포일동, 에이스청계타워)</dd>
+                            <dd>대표문의 : 031-348-0212</dd>
+                            <dd>팩스 : 031.348.0213</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // 지도 로딩 후 실행될 함수
+        var container = document.getElementById('map'); // 지도를 담을 영역
+        var options = {
+            center: new kakao.maps.LatLng(37.39756644604762, 126.98741333535506), // 지도 중심 좌표
+            level: 3 // 지도 확대 수준
+        };
+
+        var map = new kakao.maps.Map(container, options); // 지도 생성 및 객체 리턴
+
+        // 마커 추가 예시
+        var markerPosition = new kakao.maps.LatLng(37.39756644604762, 126.98741333535506); // 마커 위치
+        var marker = new kakao.maps.Marker({
+            position: markerPosition
+        });
+        marker.setMap(map); // 마커 지도에 표시
+
+        // 인포윈도우 예시
+        var infowindow = new kakao.maps.InfoWindow({
+            content: '<div style="padding:5px; font-size:14px;">여기가 회사 위치입니다!</div>'
+        });
+        kakao.maps.event.addListener(marker, 'click', function () {
+            infowindow.open(map, marker); // 마커 클릭 시 인포윈도우 표시
+        });
+    </script>
+    <div id="footer-container"></div>
+
+    <script>
+
+        // header.html을 불러와서 #header-container div에 삽입하는 코드
+        fetch('/html/common/footer.html')
+            .then(response => response.text())  // 파일을 텍스트로 처리
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data; // 가져온 HTML 삽입
+            })
+            .catch(error => console.error('Error loading header:', error)); // 오류 처리
+    </script>
+</body>
+
+</html>

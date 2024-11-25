@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(주)에이프로솔루션</title>
+    <link rel="icon" type="image/png" href="/images/AproMark.png"> 
+    <link rel="stylesheet" href="../../assets/css/common/CompanyRecruitmentStyles.css">
+    <link rel="stylesheet" href="../../assets/css/common/styles.css">
+    <script src="../../assets/JS/common/common.js"></script>
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <script>
+        // header.html을 불러와서 #header-container div에 삽입하는 코드
+        fetch('/html/common/header.html')
+            .then(response => response.text())  // 파일을 텍스트로 처리
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data; // 가져온 HTML 삽입
+        
+                // LOGO div에 클릭 이벤트 추가
+                const logo = document.querySelector('.logo');
+                if (logo) {
+                    logo.addEventListener('click', function() {
+                        const url = logo.getAttribute('data-url'); // data-url 속성에서 URL 가져오기
+                        if (url) {
+                            // 절대 경로로 변환하여 페이지 이동
+                            window.location.href = new URL(url, window.location.origin); // URL을 절대 경로로 처리
+                        }
+                    });
+                }
+                // nav-links에 있는 각 div에 대해 클릭 이벤트 추가
+                document.querySelectorAll('.nav-links div').forEach(item => {
+                    item.addEventListener('click', function() {
+                        const url = this.getAttribute('data-url'); // data-url 속성에서 URL 가져오기
+                        if (url) {
+                            // 절대 경로로 변환하여 페이지 이동
+                            window.location.href = new URL(url, window.location.origin); // URL을 절대 경로로 처리
+                        }
+                    });
+                });
+            })
+            .catch(error => console.error('Error loading header:', error)); // 오류 처리
+    </script>
+
+
+    <div class="container">
+        <!-- 인재상 Section -->
+        <div class="section talent">
+			<div class="section-tit">인재상</div>
+			<div class="subject">
+				<span class="quote">"혁신적이고 미래 지향적인 사고로 IT 산업 발전에 기여하며 <span>미래를 설계하는 도전적인 IT 인재를 지향합니다."</span></span>
+			</div>
+			
+			<div class="row type-wrap">
+				<div class="col-md-4">
+					<div class="type-box type1">
+						<div class="text">협업과 기술력으로 디지털 혁신을 <span>선도하는 사람</span></div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="type-box type2">
+						<div class="text">책임감과 도전 정신으로 미래를 <span> 설계하는 사람</span></div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="type-box type3">
+						<div class="text">미래를 설계하는 진취적이고 <span>열정적인 사람</span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+        <!-- 복리후생 Section -->
+        <div class="section">
+			<div class="section-tit">복리후생</div>
+			<ul class="welfare-intro">
+                <li><img src="/images/Insurances.png"><span>4대보험 적용</span></li>
+                <li><img src="/images/Retirement.png"><span>퇴직금 제도</span></li>
+                <li><img src="/images/AnnualLeave.png"><span>정기휴가</span></li>
+
+                <li><img src="/images/Congratulatory.png"><span>경조사비 지원</span></li>
+                <li><img src="/images/Incentive.png"><span>인센티브</span></li>
+                <li><img src="/images/hospital.png"><span>정기 종합검진</span></li>
+
+                <li><img src="/images/Thanks.png"><span>명절 선물 지급</span></li>
+                <li><img src="/images/Dinner.png"><span>야간 식대 지급</span></li>
+                <li><img src="/images/Certificate.png"><span>각종 자격증 취득 지원</span></li>
+	        </ul>			
+        </div>
+        <div class="section">
+			<div class="section-tit">채용안내</div>
+			<div class="tab-cont">
+				<h3 class="tit-type4">채용안내</h3>
+				<div class="data-st3">
+					<table>
+						<colgroup>
+							<col style="width:20%">
+							<col style="width:auto">
+							<col style="width:20%">
+							<col style="width:20%">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>채용분야</th>
+								<th>해당분야 기술 및 조건</th>
+								<th>채용인원</th>
+								<th style="border-right:hidden !important">채용대상</th>
+							</tr>
+							<tr>
+								<td>프로그램개발</td>
+								<td class="align-l">OS: Unix<br>DBMS: ORACLE, MySQL<br>언어: JAVA, Delphi<br>학력: 4년제대학 졸업이상</td>
+								<td>0명</td>
+								<td style="border-right:hidden !important">경력 및 신입</td>
+							</tr>
+							<tr>
+								<td>백엔드/서버개발</td>
+								<td class="align-l">고졸이상<br>정보처리기사</vr></td>
+								<td>0명</td>
+								<td style="border-right:hidden !important">경력 및 신입</td>
+							</tr>
+							<tr>
+								<td>비고</td>
+								<td class="align-l">해당분야에 모든 기술을 보유하지 않아도 지원 가능</td>
+								<td></td>
+								<td style="border-right:hidden !important"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<h3 class="tit-type4">채용부분 상세정보</h3>
+				<div class="data-st3">
+					<table>
+						<colgroup>
+							<col width="20%">
+							<col width="80%">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="col">채용분야</th>
+								<th scope="col" style="border-right:hidden !important">채용부분 상세정보</th>
+							</tr>
+							<tr>
+								<td>근무지</td>
+								<td class="align-l" style="border-right:hidden !important">경기 의왕</td>
+							</tr>
+							<tr>
+								<td>제출서류</td>
+								<td class="align-l" style="border-right:hidden !important">이력서, 자기소개서, 경력기술서 각 1부 (경력자의 경우는 경력사항 상세 기재요망)</td>
+							</tr>
+							<tr>
+								<td>채용방법</td>
+								<td class="align-l" style="border-right:hidden !important">1차-서류전형, 2차-면접 (서류전형 통과자에 한함)</td>
+							</tr>
+							<tr>
+								<td>접수방법</td>
+								<td class="align-l" style="border-right:hidden !important">E-Mail 접수: aprosolution@aprosolution.net</td>
+							</tr>
+							<tr>
+								<td>우편접수</td>
+								<td class="align-l" style="border-right:hidden !important">(16006)경기도 의왕시 성고개로53, A405-2호(포일동, 에이스청계타워) </td>
+							</tr>
+							<tr>
+								<td>직접접수</td>
+								<td class="align-l" style="border-right:hidden !important">당사 방문접수 가능</td>
+							</tr>
+							<tr>
+								<td>문의처</td>
+								<td class="align-l" style="border-right:hidden !important">전 화: 031) 348-0212&nbsp;&nbsp;&nbsp;&nbsp;FAX: 031) 348-0213</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			
+				<h3 class="tit-type4">채용절차</h3>
+				<ul class="process-wrap">
+					<li><i class="bi bi-pass"></i> 입사지원</li>
+					<li><i class="bi bi-file-text"></i> 서류전형</li>
+					<li><i class="bi bi-person-lines-fill"></i> 면접<br>(실무/임원)</li>
+					<li class="mega"><i class="bi bi-megaphone"></i>합격자<br>통보</li>
+					<li><i class="bi bi-emoji-smile"></i> 입사</li>
+				</ul>
+				
+				<div class="data-st3">
+					<table>
+						<colgroup>
+							<col width="20%">
+							<col width="80%">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="col">입사지원</th>
+								<td class="align-l" scope="col" style="border-right:hidden !important">
+								E-Mail접수: aprosolution@aprosolution.net<br>
+								우편접수: (16006)경기도 의왕시 성고개로53, A405-2호(포일동, 에이스청계타워)
+								</td>
+							</tr>
+							<tr>
+								<th>서류전형</th>
+								<td class="align-l" style="border-right:hidden !important">
+								입사지원서를 토대로 검토 후 면접대상자에게만 서류 합격을 개인 메일로 통보
+								</td>
+							</tr>
+							<tr>
+								<th>면접</th>
+								<td class="align-l" style="border-right:hidden !important">
+								① 개인별 면접 (1시간 이내)<br>
+								② 면접 장소는 본사 사무실에서 진행<br>
+								③ 근무시작 가능시기, 희망연봉 및 커리어패스 등을 협의
+								</td>
+							</tr>
+							<tr>
+								<th>합격자 통보</th>
+								<td class="align-l" style="border-right:hidden !important">
+								① 면접 전형 결과 통보<br>
+								② 합격여부를 영업일 기준 3일 이내 개인별 통보<br>
+								③ 합격자일 경우 입사 필요 서류는 메일로 송부
+								</td>
+							</tr>
+							<tr>
+								<th>입사확정</th>
+								<td class="align-l" style="border-right:hidden !important">
+								① 실제 근무 시작일 전에 근로/연봉계약서 작성<br>
+								② 입사 서류 검토<br>
+								③ 개인별 필요장비 (컴퓨터, 사무기기 등) 지급
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+    <div id="footer-container"></div>
+    <script>
+        // header.html을 불러와서 #header-container div에 삽입하는 코드
+        fetch('/html/common/footer.html')
+            .then(response => response.text())  // 파일을 텍스트로 처리
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data; // 가져온 HTML 삽입
+            })
+            .catch(error => console.error('Error loading header:', error)); // 오류 처리
+    </script>
+</body>
+</html>

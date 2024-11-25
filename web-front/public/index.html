@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(주)에이프로솔루션</title>
+    <link rel="stylesheet" href="/assets/css/common/styles.css">
+    <script src="/assets/JS/common/common.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/AproMark.png"> 
+
+    <style>
+        .carousel {
+            margin-top: 60px; 
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header-container"></div>
+
+    <script>
+        // header.html을 불러와서 #header-container div에 삽입하는 코드
+        fetch('/html/common/header.html')
+            .then(response => response.text())  // 파일을 텍스트로 처리
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data; // 가져온 HTML 삽입
+        
+                // LOGO div에 클릭 이벤트 추가
+                const logo = document.querySelector('.logo');
+                if (logo) {
+                    logo.addEventListener('click', function() {
+                        const url = logo.getAttribute('data-url'); // data-url 속성에서 URL 가져오기
+                        if (url) {
+                            // 절대 경로로 변환하여 페이지 이동
+                            window.location.href = new URL(url, window.location.origin); // URL을 절대 경로로 처리
+                        }
+                    });
+                }
+                // nav-links에 있는 각 div에 대해 클릭 이벤트 추가
+                document.querySelectorAll('.nav-links div').forEach(item => {
+                    item.addEventListener('click', function() {
+                        const url = this.getAttribute('data-url'); // data-url 속성에서 URL 가져오기
+                        if (url) {
+                            // 절대 경로로 변환하여 페이지 이동
+                            window.location.href = new URL(url, window.location.origin); // URL을 절대 경로로 처리
+                        }
+                    });
+                });
+            })
+            .catch(error => console.error('Error loading header:', error)); // 오류 처리
+    </script>
+    <!-- Carousel -->
+    <div id="demo" class="carousel slide" data-ride="carousel">
+        <!-- Carousel indicators -->
+        <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+        </ul>
+
+        <!-- Carousel inner content -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="images/mainpage1.jpg" alt="APROSOLUTONMAIN" style="background-color: black; height: 400px;" class="d-block w-100">
+                <div class="carousel-caption">
+                    <h3>APROSOLUTON</h3>
+                    <p>에이프로솔루션에 오신걸 환영합니다!</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/BusinessService.jpg" alt="Business Service" class="d-block w-100" style="height: 400px;">
+                <div class="carousel-caption">
+                    <h3>미래를 만드는 기술</h3>
+                    <p>오늘의 기술로 내일을 연결합니다.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/mainpage.jpg" alt="Main Image 2" class="d-block w-100" style="height: 400px;">
+                <div class="carousel-caption">
+                    <h3>최고의 기술과 솔루션으로 고객의 성공에 기여하는</h3>
+                    <p>APRO SOLUTION</p>
+                </div>
+            </div>
+        </div>
+                <!-- Carousel controls -->
+                <a class="carousel-control-prev" href="#demo" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#demo" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+
+        <!--main -->
+
+        <div class="container">
+		
+            <div class="row main-info">
+                <div class="col-lg-7 col-md-7 col-sm-12">
+                    <div class="main-img-lg img01">
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-12">
+                    <div class="info-unit">
+                        <div class="tit">컨설팅 </div>
+                        <div class="text">고객 중심의 맞춤형 전략과 컨설팅을 제공</div>
+                        <ul class="check-list">
+                            <li>고객 맞춤형 혁신 컨설팅을 제공</li>
+                            <li>다양한 전문기술 및 솔루션 컨설팅</li>
+                            <li>기업 성장을 이끄는 전략 컨설팅</li>
+                        </ul>
+                        <a href="html/business/BusinessConsulting.html" class="btn-more"><span>자세히 보기&nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">></span></span></a>
+                    </div>			
+                </div>
+            </div>
+            
+            <div class="row main-info bg">
+                <div class="col-lg-5 col-md-5 col-sm-12">
+                    <div class="info-unit">
+                        <div class="tit">서비스 </div>
+                        <div class="text">성공을 지원하는 효율성을 극대화한 맞춤형 ICT 서비스</div>
+                        <ul class="check-list">
+                            <li>기업 경쟁력을 높이는 ICT 서비스 제공</li>
+                            <li>미래 성장을 위한 전문 ICT 서비스 </li>
+                            <li>비즈니스 성공을 돕는 통합 IT 서비스</li>
+                        </ul>
+                        <a href="html/business/BusinessService.html" class="btn-more"><span>자세히 보기&nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">></span></span></a>
+                    </div>			
+                </div>
+                <div class="col-lg-7 col-md-7 col-sm-12">
+                    <div class="main-img-lg img02">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row main-info">
+                <div class="col-lg-7 col-md-7 col-sm-12">
+                    <div class="main-img-lg img03">
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-12">
+                    <div class="info-unit">
+                        <div class="tit">솔루션 </div>
+                        <div class="text">빠르고 신뢰할 수 있는<br>고객 맞춤형 혁신 솔루션을 제공합니다.</div>
+                        <ul class="check-list">
+                            <li>기업 성과를 높이는 효율적인 솔루션</li>
+                            <li>비즈니스 가치를 극대화하는 IT 솔루션</li>
+                        </ul>
+                        <a href="html/business/BusinessSolution.html" class="btn-more"><span>자세히 보기&nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">></span></span></a>
+                    </div>			
+                </div>
+            </div>
+            
+        </div>
+        <!--
+        <div class="container">
+    <div class="section">
+        <div class="box picture">
+            <img src="images/BusinessService.jpg" alt="Business Service Image" width="200" height="180" /> 
+        </div>
+        <div class="box text-area">
+            <div>TEXT AREA</div>
+            <button class="button">Button</button>
+        </div>
+    </div>
+    <div class="section">
+        <div class="box text-area">
+            <div>TEXT AREA</div>
+            <button class="button">Button</button>
+        </div>
+        <div class="box picture">
+            <img src="images/mainImage2.jpg" alt="Business Service Image" width="200" height="180" /> 
+        </div>
+    </div>
+    <div class="section">
+        <div class="box picture">
+            <img src="images/APRO_SOLUTION_logo.PNG" alt="Business Service Image" width="200" height="180" /> 
+        </div>
+        <div class="box text-area">
+            <div>TEXT AREA</div>
+            <button class="button">Button</button>
+        </div>
+    </div>
+</div>
+-->
+<div id="footer-container"></div>
+<script>
+    // header.html을 불러와서 #header-container div에 삽입하는 코드
+    fetch('html/common/footer.html')
+        .then(response => response.text())  // 파일을 텍스트로 처리
+        .then(data => {
+            document.getElementById('footer-container').innerHTML = data; // 가져온 HTML 삽입
+        })
+        .catch(error => console.error('Error loading header:', error)); // 오류 처리
+</script>
+</body>
+</html>

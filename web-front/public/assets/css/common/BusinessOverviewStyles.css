@@ -1,0 +1,123 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+header, footer {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+.breadcrumb {
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+.business-section {
+    padding: 20px;
+    min-height: 160px;
+    margin: 15px auto;
+    width: 70%;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    width: 70%;
+    margin: 0 auto;
+}
+.business-section h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    text-align: center;
+    align-items: center;
+}
+.service-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+.service-item {
+    text-align: center;
+}
+.icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.service-item ul {
+    padding-left: 30px;  
+    margin: 0;
+}
+.check-make li {
+    position: relative;
+    padding-left: 40px; /* 마크와 텍스트 간 간격을 더 넓게 설정 */
+    list-style: none;
+}
+
+.check-make li::before {
+    content: '';
+    position: absolute;
+    left: -15px; /* 마크를 왼쪽으로 더 밀어서 간격 확보 */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px; /* 마크 크기 */
+    height: 12px;
+    background: linear-gradient(135deg, rgb(0, 114, 188), #ffffff); /* 그라데이션 효과 */
+    border: 2px solid #ffffff; /* 흰색 테두리 */
+    border-radius: 50%; /* 원형 유지 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 그림자 */
+}
+/* li 요소 스타일 */
+.service-item li {
+    list-style-type: none; 
+    margin-bottom: 10px; 
+    font-size: 14px;   
+    color: #333;     
+    text-align: left;  
+    position: relative;  
+    padding-left: 10px;  
+}
+.image-placeholder {
+    width: 350px;
+    height: 230px;
+    background-color: #eaeaea;
+    margin: 15px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+}
+.section {
+    margin-bottom : 100px;
+}
+.section .section-tit {
+    font-size: 32px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    margin-bottom: 50px;
+    align-items: center;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    
+}
+.footer-logo {
+    margin-bottom: 10px;
+    font-weight: bold;
+}

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible=IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(주)에이프로솔루션</title><link rel="icon" type="image/png" href="/images/AproMark.png"> 
+    <link rel="stylesheet" href="../../assets/css/intranet/employee_enroll_Styles.css">
+    <link rel="stylesheet" href="../../assets/css/intranet/sidebar.css">
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <!-- 사이드바 -->
+        <div id="sidbar-container"></div>
+        <script>
+            // header.html을 불러와서 #header-container div에 삽입하는 코드
+            fetch('/html/common/sidbar.html')
+                .then(response => response.text())  // 파일을 텍스트로 처리
+                .then(data => {
+                    document.getElementById('sidbar-container').innerHTML = data; // 가져온 HTML 삽입
+
+                    // LOGO div에 클릭 이벤트 추가
+                    const logo = document.querySelector('.logo');
+                    if (logo) {
+                        logo.addEventListener('click', function () {
+                            const url = logo.getAttribute('data-url'); // data-url 속성에서 URL 가져오기
+                            if (url) {
+                                // 절대 경로로 변환하여 페이지 이동
+                                window.location.href = new URL(url, window.location.origin); // URL을 절대 경로로 처리
+                            }
+                        });
+                    }
+                    // nav-links에 있는 각 div에 대해 클릭 이벤트 추가
+                    document.querySelectorAll('.menu a').forEach(item => {
+                        item.addEventListener('click', function () {
+                            const url = this.getAttribute('data-url'); // data-url 속성에서 URL 가져오기
+                            if (url) {
+                                // 절대 경로로 변환하여 페이지 이동
+                                window.location.href = new URL(url, window.location.origin); // URL을 절대 경로로 처리
+                            }
+                        });
+                    });
+                })
+                .catch(error => console.error('Error loading header:', error)); // 오류 처리
+        </script>
+        <div class="content">
+            <section class="employee-detail">
+                <h2>직원 추가</h2>
+                <form>
+                    <div class="form-container">
+                        <!-- Left Section -->
+                        <div class="left-section">
+                            <div class="form-group">
+                                <label for="name">아이디</label>
+                                <input type="text" id="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="name">비밀번호</label>
+                                <input type="text" id="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="name">비밀번호 재확인</label>
+                                <input type="text" id="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="joining-date">입사일</label>
+                                <input type="date" id="joining-date">
+                            </div>
+                            <div class="form-group">
+                                <label for="position">직급</label> 
+                                <select id="position">
+                                    <option>사원</option>
+                                    <option>계장</option>
+                                    <option>대리</option>
+                                    <option>과장</option>
+                                    <option>차장</option>
+                                    <option>부장</option>
+                                    <option>대표</option>
+                                </select>
+                            </div>
+                            <!-- 직책 및 권한 -->
+                            <div class="form-div form-div-BottomMargin">
+                                <div class="form-group form-div-margin">
+                                    <label for="rank">기술등급</label>
+                                    <select id="rank">
+                                        <option>초급</option>
+                                        <option>중급</option>
+                                        <option>고급</option>
+                                    </select>
+                                </div>
+                                <!-- 권한 선택 -->
+                                <div class="form-group marginBottom30 form-div-margin">
+                                    <label for="permission">권한</label>
+                                    <div id="custom-select" class="custom-select">
+                                        <input type="text" id="selected-options" placeholder="권한을 선택하세요" readonly
+                                            onclick="toggleDropdown()" />
+                                        <div id="checkbox-container" class="checkbox-container">
+                                            <label>
+                                                <input type="checkbox" value="master" /> Master
+                                            </label>
+                                            <label>
+                                                <input type="checkbox" value="employee_management" /> 직원 관리
+                                            </label>
+                                            <label>
+                                                <input type="checkbox" value="project_management" /> 게시물 관리
+                                            </label>
+                                            <label>
+                                                <input type="checkbox" value="resource_management" /> 직원 게시판 관리
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="period-container">
+                                <span class="label">권한기간</span>
+                                <div class="date-input">
+                                    <div class="date-box">
+                                        <input type="date" class="date-picker" />
+                                    </div>
+                                    <span class="separator">~</span>
+                                    <div class="date-box">
+                                        <input type="date" class="date-picker" />
+                                    </div>
+                                </div>
+                            </div>
+                            
+
+                        </div>
+
+                        <!-- Right Section -->
+                        <div class="right-section">
+                            <div class="form-group">
+                                <label for="name">이름</label>
+                                <input type="text" id="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="birthdate">생년월일</label>
+                                <input type="date" id="birthdate">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">휴대전화</label>
+                                <input type="text" id="phone" placeholder="000-0000-0000">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">이메일</label>
+                                <input type="email" id="email" placeholder="example@example.com">
+                            </div>
+                            <div class="form-group">
+                                <div class="zip-group">
+                                    <label for="zip">우편번호</label>
+                                    <button class="zip-btn" type="button" onclick="openAddressPopup()">우편번호 찾기</button>
+                                </div>
+                                <input type="text" id="zip" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">주소</label>
+                                <input type="text" id="address" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="addressDetail">상세주소</label>
+                                <input type="text" id="addressDetail">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="form-buttons">
+                        <button type="submit">등록</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    // 드롭다운 열고 닫기
+    function toggleDropdown() {
+        const container = document.getElementById("checkbox-container");
+        container.style.display = container.style.display === "block" ? "none" : "block";
+    }
+
+    // 체크박스 선택 상태를 업데이트하여 input 필드에 표시
+    document.querySelectorAll('#checkbox-container input').forEach(checkbox => {
+        checkbox.addEventListener('change', updateSelectedOptions);
+    });
+
+    function updateSelectedOptions() {
+        const checkboxes = document.querySelectorAll('#checkbox-container input:checked');
+        const selectedValues = Array.from(checkboxes).map(cb => cb.nextElementSibling.textContent || cb.value);
+        document.getElementById("selected-options").value = selectedValues.join(", ") || "권한을 선택하세요";
+    }
+
+    // 클릭 시 드롭다운 닫기 (입력 필드 외 영역 클릭)
+    document.addEventListener('click', function (e) {
+        const selectBox = document.getElementById("custom-select");
+        if (!selectBox.contains(e.target)) {
+            document.getElementById("checkbox-container").style.display = "none";
+        }
+    });
+
+
+    // Kakao 우편번호 API open
+    function openAddressPopup() {
+        new daum.Postcode({
+            oncomplete: function(data) {
+                // 팝업에서 검색결과 항목을 클릭했을 때 실행할 코드를 작성하는 부분
+
+                var addr = ''; // 주소 변수
+
+                // 사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                if (data.userSelectedType === 'R') { // 도로명 주소 선택 시
+                    addr = data.roadAddress;
+                } else { // 지번 주소 선택 시
+                    addr = data.jibunAddress;
+                }
+
+                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                document.getElementById('zip').value = data.zonecode;
+                document.getElementById('address').value = addr;
+
+                // 커서를 상세주소 필드로 이동한다.
+                document.getElementById('addressDetail').focus();
+            }
+        }).open();
+    }
+</script>
