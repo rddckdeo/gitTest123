@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible=IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(주)에이프로솔루션</title><link rel="icon" type="image/png" href="/images/AproMark.png"> 
+    <link rel="stylesheet" href="../../assets/css/intranet/popup_group_code_Styles.css">
+    <script src="../../assets/JS/intranet/intranet.js"></script>
+</head>
+<body>
+    <div class="popup-container">
+        <!-- 팝업 헤더 -->
+        <div class="popup-header">
+            <h2>[팝업] 공통 그룹 코드</h2>
+        </div>
+
+        <!-- 공통 코드 상세 폼 -->
+        <form class="code-detail-form">
+            <div class="form-section">
+
+                <!-- 공통 그룹 코드 -->
+                <div class="form-group">
+                    <label for="group-code">공통 그룹 코드</label>
+                    <select id="group-code">
+                        <option>그룹 코드 선택</option>
+                        <option>코드1</option>
+                        <option>코드2</option>
+                    </select>
+                </div>
+
+                <!-- 코드명 -->
+                <div class="form-group">
+                    <label for="code-name">코드명</label>
+                    <select id="code-name">
+                        <option>코드명 선택</option>
+                        <option>코드명1</option>
+                        <option>코드명2</option>
+                    </select>
+                </div>
+
+                <!-- 사용여부 수정 241115 임현우 -->
+                <div class="form-group">
+                    <label>사용여부</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="usage" value="yes" checked> 여</label>
+                        <label><input type="radio" name="usage" value="no"> 부</label>
+                    </div>
+                </div>
+
+                <!-- 등록일 -->
+                <div class="form-group">
+                    <label for="registration-date">등록일</label>
+                    <input type="date" id="registration-date">
+                </div>
+
+                 <!-- 삭제여부 추가 241115 임현우 -->
+                 <div class="form-group">
+                    <label>삭제여부</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="delete" value="yes"> 여</label>
+                        <label><input type="radio" name="delete" value="no" checked> 부</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 버튼들 -->
+            <div class="form-buttons">
+                <button type="button">수정</button>
+                <button type="submit">저장</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

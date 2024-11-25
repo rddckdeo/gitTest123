@@ -1,0 +1,304 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+.content {
+    width: 70%;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 1000px;
+}
+
+.employee-detail {
+    width: 750px;
+    height: 800px;
+    margin: auto;
+
+}
+
+.employee-detail form{
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.employee-detail h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.form-container {
+    display: flex;
+    gap: 20px;
+
+}
+
+.left-section, .right-section {
+    flex: 1;
+    padding: 15px;
+    min-width: 330px;
+}
+.right-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.left-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    width: 85%;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="email"],
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.image-placeholder {
+    width: 150px;
+    height: 150px;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+    margin-bottom: 10px;
+}
+
+.upload-button {
+    display: block;
+    padding: 8px 12px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.upload-button:hover {
+    background-color: #0056b3;
+}
+
+.radio-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin:0 35px 35px 0;
+}
+
+.form-buttons button {
+    padding: 8px 12px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-buttons button:hover {
+    background-color: #0056b3;
+}
+
+/*  */
+.period-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #333;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    margin-bottom: 15px; /* 다른 요소들과 간격을 주기 위해 추가 */
+    flex-direction: column;
+}
+
+.period-container .label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.period-container .date-input {
+    display: flex;
+    align-items: center;
+}
+
+.period-container .date-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #333;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.period-container .date-picker {
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.period-container .separator {
+    margin: 0 8px;
+    font-weight: bold;
+}
+/* 드롭다운 */
+.dropdown {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #ffffff;
+    appearance: none; /* 기본 드롭다운 화살표 제거 */
+    cursor: pointer;
+    position: relative;
+    padding-right: 30px; /* 화살표 아이콘 자리 확보 */
+    text-align: center;
+}
+
+.dropdown::after {
+    content: '▼'; /* 드롭다운 화살표 */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 12px;
+    color: #333;
+}
+
+.form-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.img-container{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.marginBottom30{
+    margin-bottom: 40px;
+}
+
+/* 전체 컨테이너 스타일 */
+.custom-select {
+    position: relative;
+    width: 150px;
+}
+
+/* 기본 입력 필드 스타일 */
+#selected-options {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* 체크박스 옵션 컨테이너 숨김 */
+.checkbox-container {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 120%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-height: 200px;
+    overflow-y: auto;
+    font-size: 12px;
+}
+
+/* 체크박스 옵션 스타일 */
+.checkbox-container label {
+    display: block;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.checkbox-container label:hover {
+    background-color: #f0f0f0;
+}
+
+.checkbox-container input {
+    margin-right: 10px;
+}
+
+.form-div{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.form-div-margin{
+    margin: 10px;
+}
+
+.form-div-BottomMargin{
+    margin-bottom: 20px;
+}
+
+/* kakao 우편 */
+.zip-group{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.zip-btn{
+    border: 1px solid #ccc;
+    border-color: #dbdbdb #d2d2d2 #b2b2b2 #d2d2d3;
+    color: #464646;
+    border-radius: 3px;
+    font-size: 12px;
+    background-color: #fff;
+    cursor: pointer;
+    margin-left: 15px;
+    margin-bottom: 5px;
+    padding: 5px 10px;
+}
+
+.zip-btn:hover{
+    background-color: #f2f2f2;
+}
+

@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+}
+header, footer {
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+.logo {
+    font-weight: bold;
+}
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+.container{
+    width: 80%;
+    margin: 10px auto;
+}
+.breadcrumb {
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+.filter-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #ddd;
+}
+.filter-section label {
+    font-weight: bold;
+}
+.filter-section select,
+.filter-section button {
+    padding: 5px 10px;
+}
+.table-section {
+    padding: 20px;
+    min-height: 350px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+tr{
+    cursor: pointer;
+}
+td{
+    border-left: none;
+    border-right: none;
+}
+th {
+    background-color: #f9f9f9c4;
+    border: 1px solid #000000;
+    border-left: none;
+    border-right: none;
+}
+.password-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+.password-section label {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.password-section input[type="password"] {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+}
+.password-section button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px;
+}
+.password-section button:hover {
+    background-color: #0056b3;
+}
+footer {
+    padding: 20px;
+    text-align: center;
+}
+.footer-logo {
+    margin-bottom: 10px;
+    font-weight: bold;
+}

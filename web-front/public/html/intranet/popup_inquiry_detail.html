@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible=IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(주)에이프로솔루션</title>
+    <link rel="icon" type="image/png" href="/images/AproMark.png">
+    <link rel="stylesheet" href="../../assets/css/intranet/popup_inquiry_detail_Styles.css">
+    <script src="../../assets/JS/intranet/intranet.js"></script>
+</head>
+
+<body>
+    <div class="popup-container">
+        <!-- 팝업 헤더 -->
+        <div class="popup-header">
+            <h2>[팝업] 문의사항 상세</h2>
+        </div>
+
+        <!-- 문의사항 상세 폼 -->
+        <form class="inquiry-detail-form">
+            <div class="form-section">
+                <div class="form-buttons marginBottom completeBtnBox">
+                    <h3>문의내용</h3>
+                    <div>
+                        <button type="button" onclick="invisible('deleteBox')">삭제</button>
+                        <button type="submit">답변완료</button>
+                    </div>
+                </div>
+                <!-- 삭제 사유 -->
+                <div id="deleteBox" class="delete-form-group">
+                    <label for="type">삭제 사유</label>
+                    <select id="type">
+                        <option>불건전한 광고성</option>
+                        <option>욕설 및 비속어 사용</option>
+                        <option>기타</option>
+                    </select>
+                </div>
+                <!-- 작성자 -->
+                <div class="form-group">
+                    <label for="name">작성자</label>
+                    <input type="text" id="name" value="임현우" readonly>
+                </div>
+
+                <!-- 유형 -->
+                <div class="form-group">
+                    <label for="type">유형</label>
+                    <select id="type">
+                        <option>서비스</option>
+                        <option>기술 지원</option>
+                        <option>기타</option>
+                    </select>
+                </div>
+
+                <!-- 제목 -->
+                <div class="form-group">
+                    <label for="title">제목</label>
+                    <input type="text" id="title" value="질문입니다.">
+                </div>
+
+                <!-- 비밀번호 -->
+                <div class="form-group">
+                    <label for="password">비밀번호</label>
+                    <input type="password" id="password" value="******">
+                </div>
+
+                <!-- 문의내용 -->
+                <div class="form-group">
+                    <label for="content">문의내용</label>
+                    <textarea id="content" rows="4" readonly>테스트 입니다.</textarea>
+                </div>
+
+                <!-- 첨부파일 -->
+                <div class="form-group">
+                    <label for="attachment">첨부파일</label>
+                    <input type="file" id="attachment">
+                </div>
+
+                <!-- 댓글 영역 -->
+                <div class="comments-section">
+                    <!-- 댓글 -->
+                    <div class="comment1">
+                        <!-- 댓글 -->
+                        <div class="comment flexColumn">
+                            <div class="flexRow jusutifyBet">
+                                <p><strong>작성자</strong>: 홍길동</p>
+                                <p><strong>작성날짜</strong>: YY-MM-DD</p>
+                                <span class="commentspan" onclick="invisible('replyInput')">답변</span>
+                            </div>
+                            <p><strong>내용</strong>: 감사합니다.</p>
+                        </div>
+
+                        <!-- 대댓글 -->
+                        <div class="replies">
+                            <div class="comment flexColumn reply">
+                                <div class="flexRow jusutifyBet">
+                                    <p><strong>작성자</strong>: 홍길동</p>
+                                    <p><strong>작성날짜</strong>: YY-MM-DD</p>
+                                    <div>
+                                        <span class="commentspan">수정</span>
+                                        <span class="commentspan marginLeft10">삭제</span>
+                                    </div>
+                                </div>
+                                <p><strong>내용</strong>: 저도 감사합니다!</p>
+                            </div>
+                        </div>
+                        <div class="replies">
+                            <div class="comment flexColumn reply">
+                                <div class="flexRow jusutifyBet">
+                                    <p><strong>작성자</strong>: 홍길동</p>
+                                    <p><strong>작성날짜</strong>: YY-MM-DD</p>
+                                    <div>
+                                        <span class="commentspan">수정</span>
+                                        <span class="commentspan marginLeft10">삭제</span>
+                                    </div>
+                                </div>
+                                <p><strong>내용</strong>: 저도 감사합니다!</p>
+                            </div>
+                        </div>
+                        <div class="replies">
+                            <div class="comment flexColumn reply">
+                                <div class="flexRow jusutifyBet">
+                                    <p><strong>작성자</strong>: 홍길동</p>
+                                    <p><strong>작성날짜</strong>: YY-MM-DD</p>
+                                    <div>
+                                        <span class="commentspan">수정</span>
+                                        <span class="commentspan marginLeft10">삭제</span>
+                                    </div>
+                                </div>
+                                <p><strong>내용</strong>: 저도 감사합니다!</p>
+                            </div>
+                        </div>
+                        <div class="replies">
+                            <div class="comment flexColumn reply">
+                                <div class="flexRow jusutifyBet">
+                                    <p><strong>작성자</strong>: 홍길동</p>
+                                    <p><strong>작성날짜</strong>: YY-MM-DD</p>
+                                    <div>
+                                        <span class="commentspan">수정</span>
+                                        <span class="commentspan marginLeft10">삭제</span>
+                                    </div>
+                                </div>
+                                <p><strong>내용</strong>: 저도 감사합니다!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 대댓글 등록 -->
+                <div id="replyInput" class="reply-input">
+                    <input type="text" placeholder="대댓글을 입력하세요">
+                    <button>등록</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible=IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>(주)에이프로솔루션</title><link rel="icon" type="image/png" href="/images/AproMark.png"> 
+    <link rel="stylesheet" href="../../assets/css/common/ProjectPerformanceStyles.css">
+    <link rel="stylesheet" href="../../assets/css/common/styles.css">
+    <script src="../../assets/JS/common/common.js"></script>
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <script>
+        // header.html을 불러와서 #header-container div에 삽입하는 코드
+        fetch('/html/common/header.html')
+            .then(response => response.text())  // 파일을 텍스트로 처리
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data; // 가져온 HTML 삽입
+        
+                // LOGO div에 클릭 이벤트 추가
+                const logo = document.querySelector('.logo');
+                if (logo) {
+                    logo.addEventListener('click', function() {
+                        const url = logo.getAttribute('data-url'); // data-url 속성에서 URL 가져오기
+                        if (url) {
+                            // 절대 경로로 변환하여 페이지 이동
+                            window.location.href = new URL(url, window.location.origin); // URL을 절대 경로로 처리
+                        }
+                    });
+                }
+    
+                // nav-links에 있는 각 div에 대해 클릭 이벤트 추가
+                document.querySelectorAll('.nav-links div').forEach(item => {
+                    item.addEventListener('click', function() {
+                        const url = this.getAttribute('data-url'); // data-url 속성에서 URL 가져오기
+                        if (url) {
+                            // 절대 경로로 변환하여 페이지 이동
+                            window.location.href = new URL(url, window.location.origin); // URL을 절대 경로로 처리
+                        }
+                    });
+                });
+            })
+            .catch(error => console.error('Error loading header:', error)); // 오류 처리
+    </script>
+
+    <div class="breadcrumb">
+        <p>Home &gt; Project &gt; <span style="color : rgb(0, 114, 188); font-weight: bold;">프로젝트 현황</span></p>
+    </div>
+    
+    <div class="container">
+    <section class="tab-section">
+        <div class="tabs">
+            <div class="tab active" id="tab-all">전체</div>
+            <div class="tab" id="tab-public">공공부문</div>
+            <div class="tab" id="tab-general">일반부문</div>
+        </div>
+    </section>
+
+    <section class="table-section" id="table-all">
+        <table>
+            <thead>
+                <tr>
+                    <th>구분</th>
+                    <th>업체명</th>
+                    <th>주업무</th>
+                    <th>개발환경</th>
+                    <th>구축시기</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>공공</td>
+                    <td>농협은행</td>
+                    <td>디지털 플랫폼</td>
+                    <td>-</td>
+                    <td>2023-09 ~ 2024-01</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section class="table-section" id="table-public" style="display: none;">
+        <table>
+            <thead>
+                <tr>
+                    <th>업체명</th>
+                    <th>주업무</th>
+                    <th>개발환경</th>
+                    <th>구축시기</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>농협은행</td>
+                    <td>디지털 플랫폼</td>
+                    <td>JAVA, JSP, mySQL</td> 
+                    <td>2023-09 ~ 2024-01</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section class="table-section" id="table-general" style="display: none;">
+        <table>
+            <thead>
+                <tr>
+                    <th>업체명</th>
+                    <th>주업무</th>
+                    <th>개발환경</th>
+                    <th>구축시기</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>민간기업 A</td>
+                    <td>ERP 시스템 개발</td>
+                    <td>Java, Spring, PostgreSQL</td>
+                    <td>2022-06 ~ 2023-12</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <script>
+        // 탭 클릭 시 해당 테이블만 보이도록 처리
+        document.getElementById('tab-all').addEventListener('click', function() {
+            document.getElementById('table-all').style.display = 'block';
+            document.getElementById('table-public').style.display = 'none';
+            document.getElementById('table-general').style.display = 'none';
+
+            // 탭 활성화
+            document.querySelector('.tab.active').classList.remove('active');
+            this.classList.add('active');
+        });
+
+        document.getElementById('tab-public').addEventListener('click', function() {
+            document.getElementById('table-all').style.display = 'none';
+            document.getElementById('table-public').style.display = 'block';
+            document.getElementById('table-general').style.display = 'none';
+
+            // 탭 활성화
+            document.querySelector('.tab.active').classList.remove('active');
+            this.classList.add('active');
+        });
+
+        document.getElementById('tab-general').addEventListener('click', function() {
+            document.getElementById('table-all').style.display = 'none';
+            document.getElementById('table-public').style.display = 'none';
+            document.getElementById('table-general').style.display = 'block';
+
+            // 탭 활성화
+            document.querySelector('.tab.active').classList.remove('active');
+            this.classList.add('active');
+        });
+    </script>
+</div>
+    <div id="footer-container"></div>
+
+    <script>
+        // header.html을 불러와서 #header-container div에 삽입하는 코드
+        fetch('/html/common/footer.html')
+            .then(response => response.text())  // 파일을 텍스트로 처리
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data; // 가져온 HTML 삽입
+            })
+            .catch(error => console.error('Error loading header:', error)); // 오류 처리
+    </script>
+</body>
+</html>

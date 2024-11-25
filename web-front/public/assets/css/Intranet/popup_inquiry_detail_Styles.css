@@ -1,0 +1,247 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.popup-container {
+    width: 500px;
+    background-color: #fff;
+    padding: 0 20px 20px 20px;
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.popup-header h2 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.close-button {
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.inquiry-detail-form .form-section h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.required {
+    color: red;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.delete-form-group{
+    display: none;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;;
+}
+.delete-form-group label{
+    width: 100px;
+    font-weight: bold;
+}
+
+.delete-form-group input[type="text"],
+.delete-form-group input[type="password"],
+.delete-form-group select,
+.delete-form-group textarea {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group label {
+    width: 100px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group select,
+.form-group textarea {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+textarea {
+    resize: none;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.form-buttons button {
+    padding: 8px 16px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-buttons button:hover {
+    background-color: #0056b3;
+}
+
+.form-buttons button[type="button"] {
+    background-color: #6c757d;
+}
+
+.form-buttons button[type="button"]:hover {
+    background-color: #5a6268;
+}
+
+.marginBottom{
+    margin-bottom: 10px;
+}
+
+.completeBtnBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* comment 영역 */
+.comment1{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    padding: 5px 10px;
+}
+
+.comments-section {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.comment {
+    padding: 10px;
+    font-size: 12px;
+}
+.commentspan{
+    cursor: pointer;
+}
+/* 대댓글 스타일 */
+.replies {
+    margin-left: 20px; /* 들여쓰기 */
+    border-left: 2px solid #ddd; /* 왼쪽 선 추가 */
+    padding-left: 10px; /* 여백 추가 */
+}
+
+/* 대댓글 배경 */
+.reply {
+    background-color: #f1f1f1;
+    border-radius: 4px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 8px;
+}
+
+/* 대댓글 입력란 */
+.reply-input{
+    display: none;
+    flex-direction: row;
+}
+
+.reply-input input {
+    width: 80%;
+    padding: 8px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+
+}
+.reply-input button{
+    padding: 8px 16px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    min-width: 81px;
+    height: 34px;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+
+.reply-input button:hover {
+    background-color: #0056b3;
+}
+
+/* 정렬 */
+.flexRow{
+    display: flex;
+    flex-direction: row;
+}
+.flexColumn{
+    display: flex;
+    flex-direction: column;
+}
+
+.jusutifyAround{
+    justify-content: space-around;
+}
+.jusutifyBet{
+    justify-content: space-between;
+}
+
+/* 대댓글 아이콘 */
+.reply-icon {
+    color: #888;
+    margin-right: 5px;
+}
+
+/* 대댓글 연결 선 */
+.replies {
+    position: relative;
+    margin-left: 20px;
+    padding-left: 15px;
+}
+
+.replies::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background-color: #ddd;
+}
+
+.marginLeft10{
+    margin-left: 10px;
+}

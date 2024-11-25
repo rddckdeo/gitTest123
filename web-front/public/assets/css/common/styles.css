@@ -1,0 +1,328 @@
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: Arial, sans-serif;
+    }
+    *, ::after, ::before{
+        box-sizing: content-box !important;
+    }
+    header {
+        height: 100px;
+        background-color: white;
+        text-align: center;
+        padding: 20px;
+    }
+
+    /* footer 스타일 */
+    footer {
+        background-color: rgb(85, 86, 88);
+        color: white;
+        height: 160px; 
+        padding: 30px 20px 0 20px;
+        text-align: center;
+    }
+    .logofooter img {
+        width: 450px; 
+        height: auto;
+        max-width: 100%; 
+    }
+    .footer-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 5px;
+        flex-wrap: wrap; 
+    }
+    .flag-img {
+        vertical-align: middle;
+        display: inline; 
+    }
+    .fttl {
+        display: inline; 
+    }
+    .footp {
+        text-align: center; 
+        font-size: 14px;
+        line-height: 1.2; 
+        margin-left: 0;
+        flex: 1; 
+    }
+
+    .footp p {
+        text-align: left;
+        margin: 0; 
+    }
+    .ppimg {
+        font-weight: 400;
+        color: white;
+        line-height: 1.2; 
+    }
+
+    .ppimg .fttl {
+        font-weight: bold;
+        margin-left: 5px;
+    }
+
+    .ppimg .COPYR {
+        display: block;
+        margin-top: 2px; 
+        font-weight: 300; 
+        color: #cccccc;
+    }
+
+    .ppimg .personal {
+        display: block;
+        margin-top: 2px; 
+        font-weight: 500;
+        color: #f0f0f0; 
+        text-decoration: underline; 
+    }
+    footer .footp {
+        display: flex;
+        flex-direction: column;
+        gap: 4px; 
+        align-items: center; 
+    }
+
+    footer .footp span {
+        line-height: 1.2; 
+    }
+
+    /* ----------------------------------------------------------- */
+    /* 캐러셀 스타일 */
+.carousel {
+    margin-top: 60px;
+    width: 80%; /* 캐러셀의 가로 크기를 80%로 설정 */
+    margin-left: auto;  /* 왼쪽 공백 자동으로 설정 */
+    margin-right: auto; /* 오른쪽 공백 자동으로 설정 */
+}
+
+.carousel-inner img {
+    background-color: black;
+    height: 400px;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5); /* 배경을 어두운 반투명 색으로 */
+    color: white;
+    bottom: 20px;
+}
+
+.carousel-caption h3 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.carousel-caption p {
+    font-size: 18px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #000; /* 이전/다음 버튼을 검정색으로 */
+}
+
+/* -- */
+    nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 20px;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 20px;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 1200px;
+        padding: 80px 0 50px;
+    }
+    .section {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+    }
+    .main-info {
+        padding: 70px 0;
+    }
+    .row {
+        display: -ms-flexbox;
+        display: flex;
+        flex-wrap: nowrap;
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+    .main-info {
+        padding: 70px 0;
+    }
+    .main-info .info-unit .tit {
+        margin: 25px 0 0;
+        font-size: 40px;
+        font-weight: 500;
+    }
+    .main-info .info-unit .text {
+        line-height: 1.4;
+        font-size: 22px;
+        font-weight: 300;
+        opacity: .8;
+    }
+    .main-info .info-unit .check-list {
+        margin-top: 20px;
+    }
+    .main-info .info-unit .check-list li {
+        font-size: 16px;
+        font-weight: 400;
+    }
+    .check-list {
+        text-align: left;
+        display: flex;
+        flex-flow: column;
+        row-gap: 10px;
+    }
+    .check-list li {
+        padding-left: 15px;
+        line-height: 1.5;
+        color: #555;
+        display: flex;
+        align-items: flex-start;
+    }
+    .check-list li {
+        position: relative;
+        padding: 12px 20px;
+        margin: 10px 0;
+        color: #004080;
+        font-weight: bold;
+        background-color: #e6f3ff; 
+        border-left: 4px solid rgb(0, 114, 188); 
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 114, 188, 0.2);
+    }
+    .check-list li::before {
+        content: '';
+        position: absolute;
+        left: -12px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0;
+        height: 0;
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        border-right: 8px solid rgb(0, 114, 188); 
+    }
+    .main-info .info-unit .btn-more {
+        margin-top: 60px;
+        width: 160px;
+        height: 50px;
+        background-color: rgb(0, 114, 188);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 24px;
+        border-radius: 10px;
+        text-decoration: none;
+        outline: none; 
+    }
+    .main-info .bg {
+        background-color: rgb(0, 114, 188);
+        margin: 50px -70px;
+        padding: 80px 70px;
+        border-radius: 30px;
+    }
+
+    .main-info .info-unit .tit {
+        margin: 25px 0 0;
+        font-size: 40px;
+        font-weight: 300;
+    }
+
+    .col-sm-12 .col-md-7 .col-lg-7 .col-md-5 .col-lg-5{
+        position: relative;
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    .main-img-lg.img01 {
+        background-image: url(/images/business_consulting.jpg);
+    }
+    .main-img-lg.img02 {
+        background-image: url(/images/business_service.jpg);
+        margin-left: auto;
+    }
+    .main-img-lg.img03 {
+        background-image: url(/images/business_soulution.jpg);
+    }
+    .main-img-lg {
+            width: 60%;
+            border-radius: 20px;
+            height: 350px;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+    }
+    
+    .main-info.bg .info-unit .text {
+        white-space: nowrap;
+    }
+
+
+    /* 서브 메뉴 스타일 기본 설정 */
+    .nav-item {
+        position: relative;
+        min-width: 140px;
+        width: 160px;
+        font-size : 20px;
+        height: 40px;
+    }
+    /* nav-item에 마우스 오버 효과 추가 */
+    .nav-item::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 0;
+        height: 3px; 
+        background-color: rgb(0, 114, 188); 
+        transition: width 0.3s ease; 
+        font-weight: 300;
+    }
+    .nav-item:hover::after {
+        width: 100%; 
+    }
+
+    .submenu {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 45px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        padding: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+        min-width: 140px;
+        width: 140px;
+        font-size : 16px;
+
+    }
+
+    .submenu div {
+        padding: 5px 5px;
+        cursor: pointer;
+        white-space: nowrap;
+    }
+
+    .submenu div:hover {
+        background-color: none;
+        color : rgb(0, 114, 188);
+    }
+
+    /* 마우스를 올렸을 때 서브 메뉴 표시 */
+    .nav-item:hover .submenu {
+        display: block;
+    }

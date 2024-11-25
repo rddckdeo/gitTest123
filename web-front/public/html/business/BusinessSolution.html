@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible=IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(주)에이프로솔루션</title>
+    <link rel="icon" type="image/png" href="/images/AproMark.png"> 
+    <link rel="stylesheet" href="/assets/css/common/BusinessSolutionStyles.css">
+    <link rel="stylesheet" href="/assets/css/common/styles.css">
+    <script src="/assets/JS/common/common.js"></script>
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <script>
+        // header.html을 불러와서 #header-container div에 삽입하는 코드
+        fetch('/html/common/header.html')
+            .then(response => response.text())  // 파일을 텍스트로 처리
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data; // 가져온 HTML 삽입
+        
+                // LOGO div에 클릭 이벤트 추가
+                const logo = document.querySelector('.logo');
+                if (logo) {
+                    logo.addEventListener('click', function() {
+                        const url = logo.getAttribute('data-url'); // data-url 속성에서 URL 가져오기
+                        if (url) {
+                            // 절대 경로로 변환하여 페이지 이동
+                            window.location.href = new URL(url, window.location.origin); // URL을 절대 경로로 처리
+                        }
+                    });
+                }
+    
+                // nav-links에 있는 각 div에 대해 클릭 이벤트 추가
+                document.querySelectorAll('.nav-links div').forEach(item => {
+                    item.addEventListener('click', function() {
+                        const url = this.getAttribute('data-url'); // data-url 속성에서 URL 가져오기
+                        if (url) {
+                            // 절대 경로로 변환하여 페이지 이동
+                            window.location.href = new URL(url, window.location.origin); // URL을 절대 경로로 처리
+                        }
+                    });
+                });
+            })
+            .catch(error => console.error('Error loading header:', error)); // 오류 처리
+    </script>
+
+    <div class="breadcrumb">
+        <p>Home &gt; Business &gt; <span style="color : rgb(0, 114, 188); font-weight: bold;"> 내용수정 </span></p>
+    </div>
+
+    <section class="business-section">
+        <h2>기술연구소</h2>
+        <div class="service-grid">
+            <div class="service-item">
+                <div class="image-placeholder">
+                    <img src="/images/business_consulting.jpg" width="585" height="230" class="over-img"/> 
+                </div>
+                <h2>시스템 설계 및 구축</h2>
+                <p>고객의 경영 효율화를 위한 경영전략 수립, 기업 경영<br> 
+                    내용이나 경영과정 전반을 분석 하여 경영 목표 달성에<br>
+                    가장 적합하도록 재설계(BPR)를 통한 프로세스 혁신</p>
+            </div>
+            <div class="service-item">
+                <div class="image-placeholder">
+                    <img src="/images/busn-service1.jpg" width="585" height="230" class="over-img"/> 
+                </div>
+                <h2>시스템 설계 및 구축</h2>
+                <p>고객의 경영 효율화를 위한 경영전략 수립, 기업 경영<br> 
+                    내용이나 경영과정 전반을 분석 하여 경영 목표 달성에<br>
+                    가장 적합하도록 재설계(BPR)를 통한 프로세스 혁신</p>
+            </div>
+        </div>
+    </section>
+    <section class="business-section" id=" NHsection">
+        <h2>주요 고객사</h2><br>
+            <!-- <img src="/images/CompanyNH.png" class="NHimg"/>  -->
+    </section>
+
+    <div class="section" id="divBox">
+        <div class="table-data">
+            <table>
+                <colgroup>
+                    <col with="25%">
+                    <col with="75%">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th class="align-l c-org2">Front-end</th>
+                        <td class="align-l">
+                            <div>스마트한 IT 혁신 파트너</div>
+                            <div>기업의 미래를 여는 솔루션</div>
+                            <div>디지털 혁신의 동반자</div>
+                            <div>효율적 경영을 위한 IT 솔루션</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table>
+                <colgroup>
+                    <col with="25%">
+                    <col with="75%">
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th class="align-l c-org2">Back-end</th>
+                        <td class="align-l">
+                            <div>성공적인 POS 시스템 도입</div>
+                            <div>현장 맞춤형 POS 진단 솔루션</div>
+                            <div>매출 향상을 위한 POS 분석</div>
+                            <div>POS 운영 개선을 위한 진단</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            </div> 
+        </div>
+
+        <div id="footer-container"></div>
+    <script>
+        // header.html을 불러와서 #header-container div에 삽입하는 코드
+        fetch('/html/common/footer.html')
+            .then(response => response.text())  // 파일을 텍스트로 처리
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data; // 가져온 HTML 삽입
+            })
+            .catch(error => console.error('Error loading header:', error)); // 오류 처리
+    </script>
+</body>
+</html>

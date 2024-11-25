@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible=IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(주)에이프로솔루션</title>
+    <link rel="icon" type="image/png" href="/images/AproMark.png">
+    <link rel="stylesheet" href="../../assets/css/intranet/employee_notice_detail.css">
+    <link rel="stylesheet" href="../../assets/css/intranet/sidebar.css">
+    <script src="../../assets/JS/intranet/intranet.js"></script>
+
+</head>
+<body>
+    <body>
+        <div class="container">
+            <!-- 사이드바 -->
+            <div id="sidbar-container"></div>
+            <script>
+                // header.html을 불러와서 #header-container div에 삽입하는 코드
+                fetch('/html/common/sidbar.html')
+                    .then(response => response.text())  // 파일을 텍스트로 처리
+                    .then(data => {
+                        document.getElementById('sidbar-container').innerHTML = data; // 가져온 HTML 삽입
+
+                        // LOGO div에 클릭 이벤트 추가
+                        const logo = document.querySelector('.logo');
+                        if (logo) {
+                            logo.addEventListener('click', function () {
+                                const url = logo.getAttribute('data-url'); // data-url 속성에서 URL 가져오기
+                                if (url) {
+                                    // 절대 경로로 변환하여 페이지 이동
+                                    window.location.href = new URL(url, window.location.origin); // URL을 절대 경로로 처리
+                                }
+                            });
+                        }
+                        // nav-links에 있는 각 div에 대해 클릭 이벤트 추가
+                        document.querySelectorAll('.menu a').forEach(item => {
+                            item.addEventListener('click', function () {
+                                const url = this.getAttribute('data-url'); // data-url 속성에서 URL 가져오기
+                                if (url) {
+                                    // 절대 경로로 변환하여 페이지 이동
+                                    window.location.href = new URL(url, window.location.origin); // URL을 절대 경로로 처리
+                                }
+                            });
+                        });
+                    })
+                    .catch(error => console.error('Error loading header:', error)); // 오류 처리
+            </script>
+            <!-- 메인 콘텐츠 영역 -->
+            <div class="content">
+                <div class="notice-management">
+                    <h2>직원 공지사항</h2>
+                    <form class="notice-detail-form">
+                        <!-- 날짜 표시 -->
+                        <div class="form-group">
+                            <label for="date"><strong>작성 날짜 :</strong> YYYY-MM-DD</label>
+                        </div>
+                        <div class="subContent">
+                            <!-- 제목 입력 -->
+                            <div class="form-group subInput">
+                                <label for="title">제목</label>
+                                <input type="text" id="title">
+                            </div>
+                            <!-- 공지 기간 -->
+                            <div class="form-group subInput2">
+                                <label for="notice-period">공지 기간</label>
+                                <div class="form-group-date">
+                                    <input type="date" id="notice-period" placeholder="YYYY-MM-DD ~ YYYY-MM-DD">
+                                    <span class="waveSpan">~</span>
+                                    <input type="date" id="notice-period" placeholder="YYYY-MM-DD ~ YYYY-MM-DD">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 내용 입력 -->
+                        <div class="form-group">
+                            <label for="content">내용</label>
+                            <textarea id="content" rows="20" style="resize: none;"></textarea>
+                        </div>
+
+                        <!-- 첨부 파일 -->
+                        <div class="form-group">
+                            <label for="file-upload">첨부 파일</label>
+                            <input class="file-border" type="file" id="file-upload">
+                        </div>
+
+                        <!-- 버튼들 -->
+                        <div class="form-buttons">
+                            <button type="button">수정</button>
+                            <button type="button">삭제</button>
+                            <button type="submit">저장</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </body>
+
+</body>
+
+</html>
